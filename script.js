@@ -35,7 +35,7 @@ function displayMissions(json) {
     console.log('data:', json)
 
     let missions = json.forEach(mission => {
-        let r = document.createElement('li');
+        let r = document.createElement('h2');
         let desc = document.createElement('li');
         r.innerText = mission.mission_name;
         desc.innerText = mission.description;
@@ -43,5 +43,11 @@ function displayMissions(json) {
         spaceShip.appendChild(desc);
 
     })
+
+    r.setAttribute('Title');
+    desc.setAttribute('Info');
+
 }
+
+    
 
