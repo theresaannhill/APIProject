@@ -1,18 +1,14 @@
-const baseURL = 'https://api.spacexdata.com/v3/missions'; // this is my base thats reaching out to
-// the space x rockets
+const baseURL = 'https://api.spacexdata.com/v3/missions'; 
 
-const searchForm = document.querySelector('form'); // referencing form from html document
-const spaceShip = document.querySelector('ul'); // referencing ul from html documnent
+const searchForm = document.querySelector('form'); 
+const spaceShip = document.querySelector('ul'); 
 
-searchForm.addEventListener('submit', fetchSpace); // grabbing searchform variable, adding event listener,
-// event is a submit event, and the submit calls fetchSpace function
+searchForm.addEventListener('submit', fetchSpace); 
 
 function fetchSpace() {
 
 
-fetch(baseURL) // fetch starts the process of fetching a resource from a network,
-    // and that fetch returns a promise.  That promise is fulfilled or "resolved" once the reponse from
-    // the fetch is available.
+fetch(baseURL) 
     .then(data => {
        // console.log(data)
         return data.json();
