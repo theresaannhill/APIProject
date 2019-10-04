@@ -1,3 +1,44 @@
+const baseURL = 'https://api.spacexdata.com/v3/ships'; 
+
+const searchForm = document.querySelector('form'); 
+const spaceShip = document.querySelector('ul'); 
+
+searchForm.addEventListener('submit', fetchSpace); 
+
+function fetchSpace() {
+
+
+fetch(baseURL) 
+    .then(data => {
+       // console.log(data)
+        return data.json();
+    }) 
+    .then(json => {
+      displayShips(json)
+    })
+    
+}
+
+fetchSpace()
+
+function displayShips(json) {
+    console.log('data:', json)
+
+    let missions = json.forEach(ships => {
+        let rs = document.createElement('h3');
+        let descs = document.createElement('li2');
+        rs.innerText = ships.ship_name;
+        desc.innerText = ships.roles;
+        spaceShip.appendChild(rs);
+        spaceShip.appendChild(descs);
+
+    })
+
+    rs.setAttribute('Name');
+    descs.setAttribute('Roles');
+
+}
+
 const baseURL = 'https://api.spacexdata.com/v3/missions'; 
 
 const searchForm = document.querySelector('form'); 
@@ -14,13 +55,7 @@ fetch(baseURL)
         return data.json();
     }) 
     .then(json => {
-       // console.log('promise results:' json);
-
-       // a callback function is a function that is to be executed after function has
-       //finished executing.  In this case, our callback function is "displayRockets", and it is waiting on 
-       //our 'fetchSpace' function and all of it's promises to resolve being called
-       // and passed data
-       displayMissions(json)
+      displayMissions(json)
     })
     
 }
@@ -40,10 +75,8 @@ function displayMissions(json) {
 
     })
 
-    r.setAttribute('Title');
-    desc.setAttribute('Info');
+    r.setAttribute('Name');
+    desc.setAttribute('Description');
 
 }
-
-    
 

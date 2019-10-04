@@ -1,9 +1,49 @@
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: aqua;
-    border-block-color: black;
-    box-shadow: 25px;
-}
+       font-family: Arial, Helvetica, sans-serif; 
+       background-color: aqua;
+    }
+
+    .topnav { 
+        overflow: hidden;
+        background-color: gray;
+        border: 25px; 
+        align-content: center;
+        }
+
+        .topnav input[type=text] {
+            float: none;
+            padding: 20px;
+            border: none;
+            margin-top: 15px;
+            margin-right: 20px;
+            font-size: 20px;
+          }
+
+          .img-Planet {
+              width: 400px;
+              align-self: auto;
+          }
+
+          form.example input[type=text] {
+            padding: 10px;
+            font-size: 17px;
+            border: 1px solid grey;
+            float: left;
+            width: 80%;
+            background: #f1f1f1;
+          }
+          
+          form.example button {
+            float: left;
+            width: 20%;
+            padding: 10px;
+            background: #2196F3;
+            color: white;
+            font-size: 17px;
+            border: 1px solid grey;
+            border-left: none; /* Prevent double borders */
+            cursor: pointer;
+          }
 
     .bordered {
         width: 500px;
