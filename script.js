@@ -1,82 +1,42 @@
-const baseURL = 'https://api.spacexdata.com/v3/ships'; 
+const baseURL = 'https://ghibliapi.herokuapp.com/films';
 
 const searchForm = document.querySelector('form'); 
-const spaceShip = document.querySelector('ul'); 
+const Films = document.querySelector('ul'); 
 
-searchForm.addEventListener('submit', fetchSpace); 
+searchForm.addEventListener('submit', fetchFilms); 
 
-function fetchSpace() {
+function fetchFilms(event) {
 
 
-fetch(baseURL) 
+
+event.preventDefault();
+
+
+    fetch(baseURL) 
     .then(data => {
-       // console.log(data)
-        return data.json();
+       return data.json();
     }) 
     .then(json => {
-      displayShips(json)
+       displayFilms(json)
     })
     
 }
 
-fetchSpace()
-
-function displayShips(json) {
+function displayFilms(json) {
     console.log('data:', json)
 
-    let missions = json.forEach(ships => {
-        let rs = document.createElement('h3');
-        let descs = document.createElement('li2');
-        rs.innerText = ships.ship_name;
-        desc.innerText = ships.roles;
-        spaceShip.appendChild(rs);
-        spaceShip.appendChild(descs);
-
-    })
-
-    rs.setAttribute('Name');
-    descs.setAttribute('Roles');
-
-}
-
-const baseURL = 'https://api.spacexdata.com/v3/missions'; 
-
-const searchForm = document.querySelector('form'); 
-const spaceShip = document.querySelector('ul'); 
-
-searchForm.addEventListener('submit', fetchSpace); 
-
-function fetchSpace() {
-
-
-fetch(baseURL) 
-    .then(data => {
-       // console.log(data)
-        return data.json();
-    }) 
-    .then(json => {
-      displayMissions(json)
-    })
-    
-}
-
-fetchSpace()
-
-function displayMissions(json) {
-    console.log('data:', json)
-
-    let missions = json.forEach(mission => {
-        let r = document.createElement('h2');
+    let films = json.forEach(film => {
+        let r = document.createElement('h3');
+        let rel = document.createElement('h4');
         let desc = document.createElement('li');
-        r.innerText = mission.mission_name;
-        desc.innerText = mission.description;
-        spaceShip.appendChild(r);
-        spaceShip.appendChild(desc);
+        r.innerText = film.title;
+        desc.innerText = film.description;
+        rel.innerText = film.release_date;
+        Films.appendChild(r);
+        Films.appendChild(rel);
+        Films.appendChild(desc);
 
     })
-
-    r.setAttribute('Name');
-    desc.setAttribute('Description');
-
 }
 
+        
