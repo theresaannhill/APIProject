@@ -1,26 +1,60 @@
 body {
        font-family: Arial, Helvetica, sans-serif; 
-       background: url('public/assets/Sparkle.jpg')
+       background: url(public/assets/popcorn.jpg);
+       background-size: 100%;
+
     }
 
-
+   
 h1 {
     text-align: center;
-    font-size: 30px;
+    font-size: 55px;
+    padding: 15px;
+    background-color: lightgray;
+    border: black 15px solid;
 } 
 
 h3 {
     text-align: center;
-    font-size: 25px;
+    font-size: 30px;
+    padding: 10px;  
+    background-color:white;
+    border: black 4px solid;
 }
 
 h4 {
     text-align: center;
     font-size: 22px;
+    padding: 10px;  
+    background-color:lightpink;
+    border: black 4px solid;
 }
 
 
 li {
     text-align: left;
     font-size: 20px;
+    padding: 15px;  
+    background-color:lightgray;
+    border: black 4px solid;
+    font: italic;
 }
+
+#submit:hover
+{background-color: brown;
+
+}
+
+
+
+
+button {
+    width: 120px;
+    height: 50px;
+    text-decoration-color: brown;
+    text-align: center;
+    font-size: 30px;
+
+
+}
+
